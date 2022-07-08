@@ -1,59 +1,63 @@
 body {
     margin: 0;
-    overflow: hidden;
 }
 * {
     font-family: 'Montserrat', sans-serif;
 }
 .container {
+    background-color: #001864;
     height: 100vh;
     width: 100%;
 }
 label {
-    color: #081c64;
+    color: white;
     font-size: 25px;
+    margin-bottom: 15px;
 }
 .central-logo {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    height: 40%;
 }
 .logo {
-    margin-top: 120px;
-}
-::placeholder {
-    text-align: center;
-    font-size: 20px;
+    margin-top: 20px;
+    height: 100%;
 }
 .inputs-div {
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 90px;
+    justify-content: space-evenly;
     width: 100%;
-    height: 50%;
+    height: 25%;
+}
+::placeholder {
+    text-align: center;
+    font-size: 18px;
 }
 input {
     width: 20%;
     min-width: 260px;
-    margin-top: 20px;
-    min-height: 40px;
+    height:40px;
     border-radius: 50px;
     font-size: 22px;
     text-align: center;
-    outline: none;
+    outline:none;
 }
-.buttons-div {
+.buttons {
     width: 100%;
-    height: 100%;
+    height: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+}
+.forgot-pass {
+    margin-top: -10px;
+    color: white;
+    text-decoration: underline;
 }
 .button {
-    margin-top: 40px;
     display: inline-block;
     padding: 15px 25px;
     font-size: 20px;
@@ -61,8 +65,8 @@ input {
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: white;
-    background-color: #081c64;
+    color: black;
+    background-color: white;
     border: none;
     border-radius: 50px;
     box-shadow: 0 9px #999;
@@ -70,10 +74,20 @@ input {
     min-width: 150px;
     height: 70px;
 }
-.button:hover {background-color: black; color: white;}
-
+.button-div {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;    
+}
+.button:hover {
+    background-color: black;
+    color: white;
+}
 .button:active {
     background-color: black;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+    color: white;
 }
