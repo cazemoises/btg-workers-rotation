@@ -10,7 +10,7 @@ CREATE TABLE seats(
 
 CREATE TABLE person(cpf INTEGER NOT NULL, nome TEXT NOT NULL, PRIMARY KEY(cpf));
 
-CREATE TABLE user(
+CREATE TABLE user_sys(
   email TEXT NOT NULL,
   person_cpf INTEGER NOT NULL,
   pass TEXT NOT NULL,
@@ -24,6 +24,6 @@ CREATE TABLE user_seat(
   seats_id INTEGER NOT NULL,
   date BLOB NOT NULL,
   PRIMARY KEY(seats_id),
-  CONSTRAINT user_user_seat FOREIGN KEY (user_email) REFERENCES user (email),
+  CONSTRAINT user_user_seat FOREIGN KEY (user_email) REFERENCES user_sys (email),
   CONSTRAINT seats_user_seat FOREIGN KEY (seats_id) REFERENCES seats (id)
 );
