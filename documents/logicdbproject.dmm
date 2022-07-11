@@ -1,0 +1,590 @@
+{
+	"tables": {
+		"dd8d8dd4-fc69-42ec-a833-ed30df5bf006": {
+			"id": "dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
+			"visible": true,
+			"name": "seats",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "5e02aada-007f-463b-8c3d-01a212f766bd",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "d0a28ae3-86bb-4def-bff0-0addb4a59c4b",
+					"name": "building",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "13c2b8f3-c3ec-4eaf-bed4-d611bb7e392b",
+					"name": "floor",
+					"datatype": "INTEGER",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "3bb60ad5-f15a-4c22-89c9-30093f7f00de",
+					"name": "table",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "eeb03b58-9c9e-4789-b9a2-76170c9ab277",
+					"name": "section",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "2841d362-51ba-43e5-9b6b-4b1806ce4c14",
+					"name": "status",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				}
+			],
+			"relations": [
+				"42ea2d03-d3c3-4908-8a66-78e4760f69d2"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "9bcd4b49-25d8-44cc-a810-6d8e35851d93",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "98bed3a7-043c-481d-aa30-0415e1402ad7",
+							"colid": "5e02aada-007f-463b-8c3d-01a212f766bd"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"collation": "",
+			"objectType": "table",
+			"sqlite": {
+				"withoutrowid": false
+			}
+		},
+		"ddd57a1e-7f67-4f81-a7e3-b3eba04fa137": {
+			"id": "ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
+			"visible": true,
+			"name": "person",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "52c729e3-abe6-40f3-b9ad-9f850b9b7326",
+					"name": "cpf",
+					"datatype": "INTEGER",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "d8866815-6e44-4b66-9ce1-29703505cdbf",
+					"name": "nome",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				}
+			],
+			"relations": [
+				"fd715b48-7d22-48b0-a818-6812b503ef4d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "eb75b84f-3935-4a50-9e9b-ddd13e1de7fa",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "d64cecf2-97ad-4eff-83c5-008cfe3eae26",
+							"colid": "52c729e3-abe6-40f3-b9ad-9f850b9b7326"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"collation": "",
+			"objectType": "table",
+			"sqlite": {
+				"withoutrowid": false
+			}
+		},
+		"b10e97f1-cfda-419e-abf5-d29a22498eee": {
+			"id": "b10e97f1-cfda-419e-abf5-d29a22498eee",
+			"visible": true,
+			"name": "user",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "e210b582-7f2d-4512-a35c-a31ac3d8ff50",
+					"name": "email",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "5d95991b-ecf2-4a35-a45a-5d3ad6ca2e10",
+					"name": "person_cpf",
+					"datatype": "INTEGER",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"fk": true,
+					"ref": "person"
+				},
+				{
+					"id": "31425107-d5e0-481e-adc1-815521072b79",
+					"name": "pass",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "4d32f0ed-27c4-41d7-9381-32399031e161",
+					"name": "status",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				}
+			],
+			"relations": [
+				"fd715b48-7d22-48b0-a818-6812b503ef4d",
+				"37d3d006-7606-4c9f-a38b-7772a57847b4"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "c178329d-f3e3-4ad4-8143-e7e2a751c69c",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "2f541de5-eb1c-4c8f-8be9-b05b4d08edf6",
+							"colid": "e210b582-7f2d-4512-a35c-a31ac3d8ff50"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"collation": "",
+			"objectType": "table",
+			"sqlite": {
+				"withoutrowid": false
+			}
+		},
+		"026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf": {
+			"id": "026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
+			"visible": true,
+			"name": "user_seat",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "b889de47-9437-45b1-9ba5-abbfabaf8237",
+					"name": "user_email",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"fk": true,
+					"ref": "user"
+				},
+				{
+					"id": "258c05d0-480b-4dbf-ba0b-14a206db01a0",
+					"name": "seats_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"fk": true,
+					"ref": "seats"
+				},
+				{
+					"id": "d65778bc-4a58-4459-a884-0930e48614cd",
+					"name": "date",
+					"datatype": "BLOB",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				}
+			],
+			"relations": [
+				"37d3d006-7606-4c9f-a38b-7772a57847b4",
+				"42ea2d03-d3c3-4908-8a66-78e4760f69d2"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "0469a097-1e3c-429c-aac8-3a6d6e34b8d0",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "21841cdb-63fa-4dd0-9e19-b25bdce0062a",
+							"colid": "258c05d0-480b-4dbf-ba0b-14a206db01a0"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"collation": "",
+			"objectType": "table",
+			"sqlite": {
+				"withoutrowid": false
+			}
+		}
+	},
+	"relations": {
+		"fd715b48-7d22-48b0-a818-6812b503ef4d": {
+			"id": "fd715b48-7d22-48b0-a818-6812b503ef4d",
+			"visible": true,
+			"name": "person_user",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "eb75b84f-3935-4a50-9e9b-ddd13e1de7fa",
+			"parent": "ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
+			"child": "b10e97f1-cfda-419e-abf5-d29a22498eee",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "dbb7856c-392a-4e60-825b-a42b05621c49",
+					"parentcol": "52c729e3-abe6-40f3-b9ad-9f850b9b7326",
+					"childcol": "5d95991b-ecf2-4a35-a45a-5d3ad6ca2e10"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"37d3d006-7606-4c9f-a38b-7772a57847b4": {
+			"id": "37d3d006-7606-4c9f-a38b-7772a57847b4",
+			"visible": true,
+			"name": "user_user_seat",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "c178329d-f3e3-4ad4-8143-e7e2a751c69c",
+			"parent": "b10e97f1-cfda-419e-abf5-d29a22498eee",
+			"child": "026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "bff4a0c2-5ddd-4a0a-8e94-0ed97c4da0ec",
+					"parentcol": "e210b582-7f2d-4512-a35c-a31ac3d8ff50",
+					"childcol": "b889de47-9437-45b1-9ba5-abbfabaf8237"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"42ea2d03-d3c3-4908-8a66-78e4760f69d2": {
+			"id": "42ea2d03-d3c3-4908-8a66-78e4760f69d2",
+			"visible": true,
+			"name": "seats_user_seat",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "9bcd4b49-25d8-44cc-a810-6d8e35851d93",
+			"parent": "dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
+			"child": "026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "one",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "633723ef-2e42-496a-9993-8fddd4f9245f",
+					"parentcol": "5e02aada-007f-463b-8c3d-01a212f766bd",
+					"childcol": "258c05d0-480b-4dbf-ba0b-14a206db01a0"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "btg-workers-rotation",
+		"id": "39ecf36b-d018-4cf8-b047-3b1640119356",
+		"activeDiagram": "61b8a0c9-5cf4-4883-987c-7bd79b7ab7b6",
+		"desc": "",
+		"path": "",
+		"type": "SQLITE",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 4,
+			"minor": 6,
+			"extra": 0
+		},
+		"embeddedInParentsIsDisplayed": true,
+		"schemaContainerIsDisplayed": false,
+		"cardinalityIsDisplayed": false,
+		"estimatedSizeIsDisplayed": false,
+		"stickyParentIsDisplayed": false,
+		"def_collation": "",
+		"def_coltopk": true,
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": ";",
+			"routineDelimiter": ";",
+			"keywordCase": "upper",
+			"identiferCase": "original",
+			"includeSchema": "always",
+			"quotation": "if_needed"
+		}
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"61b8a0c9-5cf4-4883-987c-7bd79b7ab7b6": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "61b8a0c9-5cf4-4883-987c-7bd79b7ab7b6",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"dd8d8dd4-fc69-42ec-a833-ed30df5bf006": {
+					"referencedItemId": "dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
+					"x": 767,
+					"y": 377,
+					"gHeight": 135,
+					"gWidth": 177,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"ddd57a1e-7f67-4f81-a7e3-b3eba04fa137": {
+					"referencedItemId": "ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
+					"x": 222,
+					"y": 188,
+					"gHeight": 63,
+					"gWidth": 166,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"b10e97f1-cfda-419e-abf5-d29a22498eee": {
+					"referencedItemId": "b10e97f1-cfda-419e-abf5-d29a22498eee",
+					"x": 214,
+					"y": 345,
+					"gHeight": 99,
+					"gWidth": 211,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf": {
+					"referencedItemId": "026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
+					"x": 510,
+					"y": 378,
+					"gHeight": 81,
+					"gWidth": 194,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd"
+		}
+	},
+	"order": [
+		"dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
+		"ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
+		"b10e97f1-cfda-419e-abf5-d29a22498eee",
+		"026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
+		"fd715b48-7d22-48b0-a818-6812b503ef4d",
+		"37d3d006-7606-4c9f-a38b-7772a57847b4",
+		"42ea2d03-d3c3-4908-8a66-78e4760f69d2"
+	]
+}
