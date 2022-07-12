@@ -16,10 +16,25 @@ exports.createPerson = async (req, res) => {
   });
 };
 
-// ==> GET:
-exports.listAllProducts = async (req, res) => {
+exports.insertSeat = async (req, res) => {
+  const { name,cpf } = req.body;
   const response = await db.query(
-    'SELECT * FROM products ORDER BY product_name ASC',
+    'INSERT INTO person (nome, cpf) VALUES ($1, $2)',
+    [name,cpf],
+  );
+
+  res.status(201).send({
+    message: 'Person added successfully!',
+    body: {
+      product: { name, cpf },
+    },
+  });
+};
+
+// ==> GET:
+exports.getPerson = async (req, res) => {
+  const response = await db.query(
+    'SELECT * FROM person ORDER BY cpf ASC',
   );
   res.status(200).send(response.rows);
 };
