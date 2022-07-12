@@ -9,7 +9,7 @@ exports.createPerson = async (req, res) => {
   );
 
   res.status(201).send({
-    message: 'Product added successfully!',
+    message: 'Person added successfully!',
     body: {
       product: { name, cpf },
     },
