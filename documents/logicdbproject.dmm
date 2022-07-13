@@ -3,14 +3,14 @@
 		"dd8d8dd4-fc69-42ec-a833-ed30df5bf006": {
 			"id": "dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
 			"visible": true,
-			"name": "seats",
+			"name": "seat",
 			"desc": "",
 			"estimatedSize": "",
 			"cols": [
 				{
 					"id": "5e02aada-007f-463b-8c3d-01a212f766bd",
 					"name": "id",
-					"datatype": "INTEGER",
+					"datatype": "TEXT",
 					"param": "",
 					"pk": true,
 					"nn": true,
@@ -25,7 +25,7 @@
 				},
 				{
 					"id": "d0a28ae3-86bb-4def-bff0-0addb4a59c4b",
-					"name": "building",
+					"name": "building_sys",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -41,7 +41,7 @@
 				},
 				{
 					"id": "13c2b8f3-c3ec-4eaf-bed4-d611bb7e392b",
-					"name": "floor",
+					"name": "floor_sys",
 					"datatype": "INTEGER",
 					"pk": false,
 					"nn": true,
@@ -55,7 +55,7 @@
 				},
 				{
 					"id": "3bb60ad5-f15a-4c22-89c9-30093f7f00de",
-					"name": "table",
+					"name": "table_sys",
 					"datatype": "INTEGER",
 					"param": "",
 					"pk": false,
@@ -71,7 +71,7 @@
 				},
 				{
 					"id": "eeb03b58-9c9e-4789-b9a2-76170c9ab277",
-					"name": "section",
+					"name": "section_sys",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -87,7 +87,7 @@
 				},
 				{
 					"id": "2841d362-51ba-43e5-9b6b-4b1806ce4c14",
-					"name": "status",
+					"name": "status_sys",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -154,7 +154,7 @@
 				},
 				{
 					"id": "d8866815-6e44-4b66-9ce1-29703505cdbf",
-					"name": "nome",
+					"name": "name",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -201,7 +201,7 @@
 		"b10e97f1-cfda-419e-abf5-d29a22498eee": {
 			"id": "b10e97f1-cfda-419e-abf5-d29a22498eee",
 			"visible": true,
-			"name": "user",
+			"name": "user_sys",
 			"desc": "",
 			"estimatedSize": "",
 			"cols": [
@@ -255,7 +255,7 @@
 				},
 				{
 					"id": "4d32f0ed-27c4-41d7-9381-32399031e161",
-					"name": "status",
+					"name": "status_sys",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -309,7 +309,7 @@
 			"cols": [
 				{
 					"id": "b889de47-9437-45b1-9ba5-abbfabaf8237",
-					"name": "user_email",
+					"name": "user_sys_email",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -328,9 +328,9 @@
 				{
 					"id": "258c05d0-480b-4dbf-ba0b-14a206db01a0",
 					"name": "seats_id",
-					"datatype": "INTEGER",
+					"datatype": "TEXT",
 					"param": "",
-					"pk": true,
+					"pk": false,
 					"nn": true,
 					"comment": "",
 					"defaultvalue": "",
@@ -371,12 +371,7 @@
 					"name": "Primary key",
 					"isPk": true,
 					"using": "na",
-					"cols": [
-						{
-							"id": "21841cdb-63fa-4dd0-9e19-b25bdce0062a",
-							"colid": "258c05d0-480b-4dbf-ba0b-14a206db01a0"
-						}
-					]
+					"cols": []
 				}
 			],
 			"indexes": [],
@@ -510,7 +505,9 @@
 			"identiferCase": "original",
 			"includeSchema": "always",
 			"quotation": "if_needed"
-		}
+		},
+		"writeFileParam": false,
+		"lastSaved": "Tue Jul 12 2022 15:00:36 GMT-0300 (Horário Padrão de Brasília)"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -528,10 +525,10 @@
 			"diagramItems": {
 				"dd8d8dd4-fc69-42ec-a833-ed30df5bf006": {
 					"referencedItemId": "dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
-					"x": 767,
-					"y": 377,
+					"x": 784,
+					"y": 360,
 					"gHeight": 135,
-					"gWidth": 177,
+					"gWidth": 200,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -539,8 +536,8 @@
 				},
 				"ddd57a1e-7f67-4f81-a7e3-b3eba04fa137": {
 					"referencedItemId": "ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
-					"x": 222,
-					"y": 188,
+					"x": 227,
+					"y": 250,
 					"gHeight": 63,
 					"gWidth": 166,
 					"color": "#ffffff",
@@ -550,8 +547,8 @@
 				},
 				"b10e97f1-cfda-419e-abf5-d29a22498eee": {
 					"referencedItemId": "b10e97f1-cfda-419e-abf5-d29a22498eee",
-					"x": 214,
-					"y": 345,
+					"x": 215,
+					"y": 343,
 					"gHeight": 99,
 					"gWidth": 211,
 					"color": "#ffffff",
@@ -561,10 +558,10 @@
 				},
 				"026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf": {
 					"referencedItemId": "026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
-					"x": 510,
-					"y": 378,
+					"x": 508,
+					"y": 343,
 					"gHeight": 81,
-					"gWidth": 194,
+					"gWidth": 213,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
