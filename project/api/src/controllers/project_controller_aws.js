@@ -10,10 +10,7 @@ var params = {
  QueueUrl: "http://localhost:4566/000000000000/soulindo"
 };
 
-
-
 exports.sendMessage = async (req, res) => {
-  //Como manda??? kkkk
   let ret
   params.MessageBody = JSON.stringify(req.body)
   sqs.sendMessage(params, function(err, data) {
@@ -27,12 +24,43 @@ exports.sendMessage = async (req, res) => {
         message: 'Message sent successfully!',
         body: {
           message : data
-        }
-          
-        ,
+        },
       })
     }
   });
+}
 
- 
+exports.readMessage = async (req, res) => {
+var queueURL = "http://localhost:4566/000000000000/soulindo";
+
+var params = {
+ AttributeNames: [
+    "SentTimestamp"
+ ],
+ MaxNumberOfMessages: 10,
+ MessageAttributeNames: [
+    "All"
+ ],
+ QueueUrl: queueURL,
+ VisibilityTimeout: 20,
+ WaitTimeSeconds: 0
+};
+
+sqs.receiveMessage(params, function(err, data) {
+  if (err) {
+    console.log("Receive Error", err);
+  } else if (data.Messages) {
+    var deleteParams = {
+      QueueUrl: queueURL,
+      ReceiptHandle: data.Messages[0].ReceiptHandle
+    };
+    sqs.deleteMessage(deleteParams, function(err, data) {
+      if (err) {
+        console.log("Delete Error", err);
+      } else {
+        console.log("Message Deleted", data);
+      }
+    });
+  }
+});
 }
