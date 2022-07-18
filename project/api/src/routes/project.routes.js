@@ -30,5 +30,4 @@ router.get('/update-user-seat', userSeatController.updateUserSeat);
 
  //AWS SQS
  router.post('/sqs', projectAWSController.sendMessage);
- router.get('/read-sqs', projectAWSController.readMessage);
  module.exports = router;
