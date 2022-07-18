@@ -140,7 +140,7 @@
 			"cols": [
 				{
 					"id": "52c729e3-abe6-40f3-b9ad-9f850b9b7326",
-					"name": "cpf",
+					"name": "identification_value",
 					"datatype": "INTEGER",
 					"pk": true,
 					"nn": true,
@@ -167,10 +167,29 @@
 					"sqlite": {
 						"autoincrement": false
 					}
+				},
+				{
+					"id": "ec518e6a-1293-4c66-95b7-7c3554b29c2f",
+					"name": "identification_identification_type_code",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"fk": true,
+					"ref": "identification_type"
 				}
 			],
 			"relations": [
-				"fd715b48-7d22-48b0-a818-6812b503ef4d"
+				"fd715b48-7d22-48b0-a818-6812b503ef4d",
+				"87b5bc2c-7cd6-4e3f-bc83-4a65971b1488"
 			],
 			"lines": [],
 			"keys": [
@@ -223,7 +242,7 @@
 				},
 				{
 					"id": "5d95991b-ecf2-4a35-a45a-5d3ad6ca2e10",
-					"name": "person_cpf",
+					"name": "person_identification_value",
 					"datatype": "INTEGER",
 					"pk": false,
 					"nn": true,
@@ -384,6 +403,75 @@
 			"sqlite": {
 				"withoutrowid": false
 			}
+		},
+		"2cbe37fd-255f-465c-8e37-0ca92973d5ce": {
+			"id": "2cbe37fd-255f-465c-8e37-0ca92973d5ce",
+			"visible": true,
+			"name": "identification",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "36a2d9bd-fedd-44a8-ac78-1307fe776f0a",
+					"name": "identification_type_code",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				},
+				{
+					"id": "1d86d156-5edd-48b9-a405-ff21263192ff",
+					"name": "identification_type",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					}
+				}
+			],
+			"relations": [
+				"87b5bc2c-7cd6-4e3f-bc83-4a65971b1488"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "0933a42c-3ff2-4b87-a667-70c45a7b1a4e",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "3bef0ebe-bd67-4430-a90a-e9b3f2dc0e18",
+							"colid": "36a2d9bd-fedd-44a8-ac78-1307fe776f0a"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"internalColumnIdRef": "",
+			"collation": "",
+			"objectType": "table",
+			"sqlite": {
+				"withoutrowid": false
+			}
 		}
 	},
 	"relations": {
@@ -461,6 +549,31 @@
 			],
 			"generate": true,
 			"generateCustomCode": true
+		},
+		"87b5bc2c-7cd6-4e3f-bc83-4a65971b1488": {
+			"id": "87b5bc2c-7cd6-4e3f-bc83-4a65971b1488",
+			"visible": true,
+			"name": "identification_type_person",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "0933a42c-3ff2-4b87-a667-70c45a7b1a4e",
+			"parent": "2cbe37fd-255f-465c-8e37-0ca92973d5ce",
+			"child": "ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "d8692df7-1c85-493e-badf-07807573bec9",
+					"parentcol": "36a2d9bd-fedd-44a8-ac78-1307fe776f0a",
+					"childcol": "ec518e6a-1293-4c66-95b7-7c3554b29c2f"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
 		}
 	},
 	"notes": {},
@@ -507,7 +620,7 @@
 			"quotation": "if_needed"
 		},
 		"writeFileParam": false,
-		"lastSaved": "Tue Jul 12 2022 15:00:36 GMT-0300 (Horário Padrão de Brasília)"
+		"lastSaved": "Wed Jul 13 2022 11:28:24 GMT-0300 (Horário Padrão de Brasília)"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -525,8 +638,8 @@
 			"diagramItems": {
 				"dd8d8dd4-fc69-42ec-a833-ed30df5bf006": {
 					"referencedItemId": "dd8d8dd4-fc69-42ec-a833-ed30df5bf006",
-					"x": 784,
-					"y": 360,
+					"x": 872,
+					"y": 376,
 					"gHeight": 135,
 					"gWidth": 200,
 					"color": "#ffffff",
@@ -536,10 +649,10 @@
 				},
 				"ddd57a1e-7f67-4f81-a7e3-b3eba04fa137": {
 					"referencedItemId": "ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
-					"x": 227,
-					"y": 250,
-					"gHeight": 63,
-					"gWidth": 166,
+					"x": 241,
+					"y": 147,
+					"gHeight": 81,
+					"gWidth": 363,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -547,10 +660,10 @@
 				},
 				"b10e97f1-cfda-419e-abf5-d29a22498eee": {
 					"referencedItemId": "b10e97f1-cfda-419e-abf5-d29a22498eee",
-					"x": 215,
-					"y": 343,
+					"x": 223,
+					"y": 328,
 					"gHeight": 99,
-					"gWidth": 211,
+					"gWidth": 302,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -558,10 +671,21 @@
 				},
 				"026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf": {
 					"referencedItemId": "026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
-					"x": 508,
-					"y": 343,
+					"x": 313,
+					"y": 478,
 					"gHeight": 81,
 					"gWidth": 213,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"2cbe37fd-255f-465c-8e37-0ca92973d5ce": {
+					"referencedItemId": "2cbe37fd-255f-465c-8e37-0ca92973d5ce",
+					"x": 714,
+					"y": 170,
+					"gHeight": 63,
+					"gWidth": 284,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -580,8 +704,10 @@
 		"ddd57a1e-7f67-4f81-a7e3-b3eba04fa137",
 		"b10e97f1-cfda-419e-abf5-d29a22498eee",
 		"026d38a6-b3c4-4ecc-b4ef-89478c8c1ddf",
+		"2cbe37fd-255f-465c-8e37-0ca92973d5ce",
 		"fd715b48-7d22-48b0-a818-6812b503ef4d",
 		"37d3d006-7606-4c9f-a38b-7772a57847b4",
-		"42ea2d03-d3c3-4908-8a66-78e4760f69d2"
+		"42ea2d03-d3c3-4908-8a66-78e4760f69d2",
+		"87b5bc2c-7cd6-4e3f-bc83-4a65971b1488"
 	]
 }
