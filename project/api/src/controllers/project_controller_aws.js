@@ -5,8 +5,6 @@ AWS.config.update({ region: 'us-east-1' });
 var sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
 var params = {
   MessageBody: "Information about current NY Times fiction bestseller for week of 12/11/2016.",
-  // MessageDeduplicationId: "TheWhistler",  // Required for FIFO queues
-  // MessageGroupId: "Group1",  // Required for FIFO queues
   QueueUrl: "http://localhost:4566/000000000000/soulindo"
 };
 
@@ -46,15 +44,12 @@ exports.readMessage = async (req, res) => {
     VisibilityTimeout: 1,
     WaitTimeSeconds: 0
   };
-
-  console.log("b")
   sqs.receiveMessage(params, function (err, data) {
-    var teste = data
+    console.log(data)
     if (err) {
       console.log("Receive Error", err);
     } else if (data.Messages) {
       for (let i = 0; i < data.Messages.length; i++) {
-        console.log(data.Messages[i].ReceiptHandle)
         var deleteParams = {
           QueueUrl: queueURL,
           ReceiptHandle: data.Messages[i].ReceiptHandle
@@ -63,7 +58,6 @@ exports.readMessage = async (req, res) => {
           if (err) {
             console.log("Delete Error", err);
           } else {
-            console.log('funciona')
             console.log("Message Deleted", data);
           }
         });
@@ -71,7 +65,5 @@ exports.readMessage = async (req, res) => {
       };
     }
   })
-  console.log("c")
-  res.status(200).send()
-  console.log("a")
+  res.status(200).send("ai minha voaida")
 }
