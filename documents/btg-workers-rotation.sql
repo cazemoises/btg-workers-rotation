@@ -1,10 +1,10 @@
 CREATE TABLE seat(
   id TEXT NOT NULL,
-  building_sys TEXT NOT NULL,
-  floor_sys INTEGER NOT NULL,
-  table_sys INTEGER NOT NULL,
-  section_sys TEXT NOT NULL,
-  status_sys TEXT NOT NULL,
+  building TEXT NOT NULL,
+  floor_number INTEGER NOT NULL,
+  table_number INTEGER NOT NULL,
+  section TEXT NOT NULL,
+  status TEXT NOT NULL,
   PRIMARY KEY(id)
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE user_sys(
   email TEXT NOT NULL,
   person_identification_value INTEGER NOT NULL,
   pass TEXT NOT NULL,
-  status_sys TEXT NOT NULL,
+  status TEXT NOT NULL,
   PRIMARY KEY(email),
   CONSTRAINT person_user
     FOREIGN KEY (person_identification_value)

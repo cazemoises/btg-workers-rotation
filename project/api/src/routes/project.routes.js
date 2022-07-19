@@ -1,6 +1,7 @@
  const router = require('express-promise-router')();
  const seatController = require('../controllers/seat_controller');
  const personController = require('../controllers/person_controller');
+ const projectController = require('../controllers/project_controller');
  const userSeatController = require('../controllers/user_seat_controller');
  const identificationController = require('../controllers/identification_controller');
  const userController = require('../controllers/users_controller');
@@ -27,6 +28,7 @@ router.get('/update-user-seat', userSeatController.updateUserSeat);
 
  //Delete
  router.post('/delete-user-seat', userSeatController.deleteUserSeat);
+ router.post('/delete-person', personController.deletePerson);
 
  //AWS SQS
  router.post('/sqs', projectAWSController.sendMessage);

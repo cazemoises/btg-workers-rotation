@@ -38,16 +38,16 @@ exports.getUserByVar = async (req, res) => {
 
 //Insert users
 exports.insertUser = async (req, res) => {
-    const { email,personIdentificationValue,pass,statusSys } = req.body;
+    const { email,personIdentificationValue,pass,status } = req.body;
     const response = await db.query(
-      'INSERT INTO user_sys (email,person_identification_value,pass,status_sys) VALUES ($1, $2, $3, $4)',
-      [email,personIdentificationValue,pass,statusSys],
+      'INSERT INTO user_sys (email,person_identification_value,pass,status) VALUES ($1, $2, $3, $4)',
+      [email,personIdentificationValue,pass,status],
     );
   
     res.status(201).send({
       message: 'User added successfully!',
       body: {
-        product: { email,personIdentificationValue,pass,statusSys },
+        product: { email,personIdentificationValue,pass,status },
       },
     });
   };

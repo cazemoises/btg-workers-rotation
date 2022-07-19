@@ -25,7 +25,7 @@
 				},
 				{
 					"id": "d0a28ae3-86bb-4def-bff0-0addb4a59c4b",
-					"name": "building_sys",
+					"name": "building",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -41,7 +41,7 @@
 				},
 				{
 					"id": "13c2b8f3-c3ec-4eaf-bed4-d611bb7e392b",
-					"name": "floor_sys",
+					"name": "floor_number",
 					"datatype": "INTEGER",
 					"pk": false,
 					"nn": true,
@@ -55,7 +55,7 @@
 				},
 				{
 					"id": "3bb60ad5-f15a-4c22-89c9-30093f7f00de",
-					"name": "table_sys",
+					"name": "table_number",
 					"datatype": "INTEGER",
 					"param": "",
 					"pk": false,
@@ -71,7 +71,7 @@
 				},
 				{
 					"id": "eeb03b58-9c9e-4789-b9a2-76170c9ab277",
-					"name": "section_sys",
+					"name": "section",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -87,7 +87,7 @@
 				},
 				{
 					"id": "2841d362-51ba-43e5-9b6b-4b1806ce4c14",
-					"name": "status_sys",
+					"name": "status",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,
@@ -274,7 +274,7 @@
 				},
 				{
 					"id": "4d32f0ed-27c4-41d7-9381-32399031e161",
-					"name": "status_sys",
+					"name": "status",
 					"datatype": "TEXT",
 					"param": "",
 					"pk": false,

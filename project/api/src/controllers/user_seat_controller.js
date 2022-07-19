@@ -4,6 +4,13 @@ const db = require('../config/database');
 const path = require('path');
 const router = express.Router();
 
+//Get busy seats
+exports.getBusySeats = async (req, res) => {
+  const response = await db.query(
+    'SELECT * FROM user_seat',
+  );
+  res.status(200).send(response.rows);
+};
 
 //Insert seats
 exports.insertUserSeat = async (req, res) => {
@@ -22,14 +29,14 @@ exports.insertUserSeat = async (req, res) => {
   };
 
 
-//Delete seats
+//Delete busy seats
 exports.deleteUserSeat = async (req, res) =>{
     const seatId = (req.body.seatId);
     const response = await db.query(
       'DELETE FROM user_seat WHERE seat_id = $1',
       [seatId],
     );
-    res.satatus(200).send(response.row);
+    res.satatus(200).send(response.rows);
 }
 
 
@@ -40,5 +47,5 @@ exports.updateUserSeat = async (req, res) =>{
         'UPDATE user_seat set date = $1 WHERE seat_id = $2',
         [seatId, date],
     );
-    res.satatus(200).send(response.row);
+    res.satatus(200).send(response.rows);
 }
