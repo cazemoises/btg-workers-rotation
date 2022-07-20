@@ -11,7 +11,8 @@ exports.getUser = async (req, res) => {
     );
     res.status(200).send(response.rows);
   };
-  
+
+//Get to select the query parameter
 exports.getUserByVar = async (req, res) => {
   console.log(req.body)
   let field = "personIdentificationValue"
@@ -40,14 +41,34 @@ exports.getUserByVar = async (req, res) => {
 exports.insertUser = async (req, res) => {
     const { email,personIdentificationValue,pass,status } = req.body;
     const response = await db.query(
-      'INSERT INTO user_sys (email,person_identification_value,pass,status) VALUES ($1, $2, $3, $4)',
+      'INSERT INTO user_sys (email,person_identification_value, pass, status) VALUES ($1, $2, $3, $4)',
       [email,personIdentificationValue,pass,status],
     );
   
     res.status(201).send({
       message: 'User added successfully!',
       body: {
-        product: { email,personIdentificationValue,pass,status },
+        product: { email,personIdentificationValue,pass, status},
       },
     });
   };
+
+//Delete user
+exports.deleteUser = async (req, res) =>{
+  const email = (req.body.email);
+  const response = await db.query(
+    'DELETE FROM user_sys WHERE email = $1',
+    [email],
+  );
+  res.status(200).send(response.rows);
+}
+
+//Update user
+exports.updateUser = async (req, res) =>{
+  const { pass, status, email} = req.body
+  const response = await db.query(
+      `UPDATE user_sys set pass = $1, status = $2  WHERE email = $3`,
+      [pass, status, email],
+  );
+  res.status(200).send(response.rows);
+}

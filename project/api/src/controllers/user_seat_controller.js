@@ -16,7 +16,7 @@ exports.getBusySeats = async (req, res) => {
 exports.insertUserSeat = async (req, res) => {
     const { seatSysEmail, seatId, date} = req.body;
     const response = await db.query(
-      'INSERT INTO user_seat (set_sys_email, seat_id, date) VALUES ($1, $2, $3)',
+      'INSERT INTO user_seat (user_sys_email, seat_id, date) VALUES ($1, $2, $3)',
       [seatSysEmail, seatId, date],
     );
   
@@ -31,21 +31,38 @@ exports.insertUserSeat = async (req, res) => {
 
 //Delete busy seats
 exports.deleteUserSeat = async (req, res) =>{
-    const seatId = (req.body.seatId);
+    const id = (req.body.id);
     const response = await db.query(
-      'DELETE FROM user_seat WHERE seat_id = $1',
-      [seatId],
+      'DELETE FROM user_seat WHERE id = $1',
+      [id],
     );
-    res.satatus(200).send(response.rows);
+    res.status(200).send(response.rows);
 }
 
-
-//Uodate seats  
+//Update seats  
 exports.updateUserSeat = async (req, res) =>{
-    const { seatId, date } = req.body
-    const response = await db.query(
-        'UPDATE user_seat set date = $1 WHERE seat_id = $2',
-        [seatId, date],
+    const { date, seatId, id  } = req.body
+    if (date && seatId) {
+      const response = await db.query(
+        'UPDATE user_seat set date = $1, seat_id = $2 WHERE id = $3',
+        [date, seatId, id],
     );
-    res.satatus(200).send(response.rows);
-}
+    res.status(200).send(response.rows);
+    }
+    else if (date){
+      const response = await db.query(
+        'UPDATE user_seat set date = $1 WHERE id = $2',
+        [date, id],
+    );
+    res.status(200).send(response.rows);
+    }
+    else if (seatId) {
+        const response = await db.query(
+          'UPDATE user_seat set seat_id = $1 WHERE id = $2',
+          [seatId, id],
+      );
+      res.status(200).send(response.rows);
+    }
+    }
+
+

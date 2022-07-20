@@ -3,14 +3,14 @@ CREATE TABLE seat(
   building TEXT NOT NULL,
   floor_number INTEGER NOT NULL,
   table_number INTEGER NOT NULL,
-  section TEXT NOT NULL,
+  section_name TEXT NOT NULL,
   status TEXT NOT NULL,
   PRIMARY KEY(id)
 );
 
 CREATE TABLE person(
-  identification_value INTEGER NOT NULL,
-  name TEXT NOT NULL,
+  identification_value BIGINT NOT NULL,
+  employee_name TEXT NOT NULL,
   identification_identification_type_code INTEGER NOT NULL,
   PRIMARY KEY(identification_value),
   CONSTRAINT identification_type_person
@@ -20,7 +20,7 @@ CREATE TABLE person(
 
 CREATE TABLE user_sys(
   email TEXT NOT NULL,
-  person_identification_value INTEGER NOT NULL,
+  person_identification_value BIGINT NOT NULL,
   pass TEXT NOT NULL,
   status TEXT NOT NULL,
   PRIMARY KEY(email),
@@ -30,12 +30,11 @@ CREATE TABLE user_sys(
 );
 
 CREATE TABLE user_seat(
+  id INTEGER AUTOINCREMENT NOT NULL,
   user_sys_email TEXT NOT NULL,
-  seat_id TEXT NOT NULL,
+  seats_id TEXT NOT NULL,
   date timestamp NOT NULL,
-  CONSTRAINT user_user_seat
-    FOREIGN KEY (user_sys_email) REFERENCES user_sys (email),
-  CONSTRAINT seat_user_seat FOREIGN KEY (seat_id) REFERENCES seat (id)
+  PRIMARY KEY(id)
 );
 
 CREATE TABLE identification(

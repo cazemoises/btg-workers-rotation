@@ -24,7 +24,7 @@ exports.insertSeat = async (req, res) => {
 //Get seats
 exports.getSeat = async (req, res) => {
   const response = await db.query(
-    'SELECT * FROM seat ORDER BY floor_number_sys ASC',
+    'SELECT * FROM seat ORDER BY floor_number ASC',
   );
   res.status(200).send(response.rows);
 };
@@ -35,3 +35,23 @@ exports.getBusySeats = async (req, res) => {
   );
   res.status(200).send(response.rows);
 };
+
+//Delete person
+exports.deleteSeat = async (req, res) =>{
+  const id = (req.body.id);
+  const response = await db.query(
+    'DELETE FROM seat WHERE id = $1',
+    [id],
+  );
+  res.status(200).send(response.rows);
+}
+
+//Update
+exports.updateSeat = async (req, res) =>{
+  const { id, building, floorNumber, tableNumber, sectionName, status } = req.body
+  const response = await db.query(
+      'UPDATE seat set building = $1, floor_number = $2, table_number = $3, section_name = $4, status = $5  WHERE id = $6',
+      [building, floorNumber, tableNumber, sectionName, status,id],
+  );
+  res.status(200).send(response.rows);
+}

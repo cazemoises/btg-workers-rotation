@@ -7,20 +7,29 @@ const router = express.Router();
 
 //Insert person
 exports.insertPerson = async (req, res) => {
-  const { name, identificationValue, identificationTypeCode } = req.body;
+  const { employeeName, identificationValue, identificationTypeCode } = req.body;
   const response = await db.query(
-    'INSERT INTO person (name_sys, identification_value, identification_identification_type_code) VALUES ($1, $2, $3)',
-    [name, identificationValue, identificationTypeCode],
+    'INSERT INTO person (employee_name, identification_value, identification_identification_type_code) VALUES ($1, $2, $3)',
+    [employeeName, identificationValue, identificationTypeCode],
   );
 
   res.status(201).send({
     message: 'Person added successfully!',
     body: {
-      product: { name, identificationValue },
+      Data: { employeeName, identificationValue },
     },
   });
 };
-
+ 
+//Update seats  
+exports.updatePerson = async (req, res) =>{
+  const { employeeName, identificationValue } = req.body
+  const response = await db.query(
+      'UPDATE person set employee_name = $1 WHERE identification_value = $2',
+      [employeeName, identificationValue],
+  );
+  res.status(200).send(response.rows);
+}
 
 //Get person
 exports.getPerson = async (req, res) => {
