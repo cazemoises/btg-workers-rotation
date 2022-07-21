@@ -15,14 +15,14 @@ exports.getUser = async (req, res) => {
 //Get to select the query parameter
 exports.getUserByVar = async (req, res) => {
   console.log(req.body)
-  let field = "personIdentificationValue"
+  let field = "person_identification_value"
   let value
   if (req.body.email) {
     field = "email";
     value = req.body.email
   } 
   else if (req.body.personIdentificationValue) {
-    field = "personIdentificationValue";
+    field = "person_identification_value";
     value = req.body.personIdentificationValue
   }
   else {

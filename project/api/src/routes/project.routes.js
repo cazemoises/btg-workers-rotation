@@ -20,6 +20,7 @@
  router.get('/get-person', personController.getPerson);
  router.get('/get-person-by-identification-value', personController.getPersonByIdentificationValue);
  router.get('/get-seat', seatController.getSeat);
+ router.get('/get-seat-by-var', seatController.getSeatByVar);
  router.get('/get-busy-seats', userSeatController.getBusySeats);
  router.get('/get-identification', identificationController.getIdentification);
  router.get('/get-user', userController.getUser);

@@ -1,0 +1,40 @@
+:root {
+    --color1:#0e1229;
+    --color2:#1b2457;
+    --color3:#3b57af;
+    --color4:#5374DB;
+    --color5:#B9D2FC;
+    --white: #FFF;
+    --black: #000;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    height: 100vh;
+    width: 100vw;
+}
+.container .center {
+    display: flex;
+    height: 100%;
+    width: 34%;
+}
+.container .center .center-left {
+    display: 1;
+    width: 50%;
+}
+.container .center .center-right {
+    display: 1;
+    width: 50%;
+}
+.container section .filters select {
+    width: 100px;
+}
+.container section .filters select .dark {
+    color: var(--white);
+    background-color: var(--color2);
+}
+.container section .filters select .light {
+    background-color: var(--color5);
+    color: #000;
+}

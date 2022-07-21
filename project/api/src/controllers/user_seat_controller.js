@@ -29,6 +29,7 @@ exports.insertUserSeat = async (req, res) => {
   };
 
 
+
 //Delete busy seats
 exports.deleteUserSeat = async (req, res) =>{
     const id = (req.body.id);
