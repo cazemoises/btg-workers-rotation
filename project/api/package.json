@@ -10,6 +10,7 @@
   "author": "Moises Caze, Priscila Falcao",
   "license": "ISC",
   "devDependencies": {
+    "global": "^4.4.0",
     "husky": "^8.0.1",
     "nodemon": "^2.0.19"
   },
